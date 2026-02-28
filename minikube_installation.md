@@ -149,3 +149,28 @@ minikube delete
 
 That's it! You've successfully installed Minikube on Ubuntu, and you can now start deploying Kubernetes applications for development and testing.
 ```
+
+(sometimes you are not able to see Nodes cause minukucbe is not installed so in this case to install it follow the below steps:
+
+sudo apt update
+
+✅ Step 2: Install Required Packages
+sudo apt install -y apt-transport-https ca-certificates curl gpg
+
+Step 3: Add Kubernetes Repo Properly
+sudo mkdir -p /etc/apt/keyrings
+
+Now add key:
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | \
+sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+Now add repository properly
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /" | \
+sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+Update Again
+sudo apt update
+
+Step 5: Install kubectl
+sudo apt install -y kubectl
+)
