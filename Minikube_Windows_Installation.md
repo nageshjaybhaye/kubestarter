@@ -90,4 +90,7 @@ minikube delete
 
 That's it! You've successfully installed Minikube on Windows, and you can now start deploying Kubernetes applications for development and testing.
 
+use powerhsell to run second command
+also u can run
+minikube start --driver=docker
     
